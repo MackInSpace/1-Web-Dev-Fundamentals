@@ -30,7 +30,8 @@
                     <h2>a better way to camp</h2>
                 </div>
                 <div class="col-md-4 col-xl-2 mt-4">
-                    <a class="btn btn-info bt-lg text-white text-nowrap" href="#reserveForm">Reserve Campsite</a>
+                    <button type="button" data-bs-toggle="modal"
+                    data-bs-target="#reserveModal" class=" btn btn-info text-white text-nowrap">Reserve Campsite</button>
                 </div>
             </div>    
         </div>
@@ -99,6 +100,50 @@
         </div>
     </div>
 
+    <!--reserve a campsite modal-->
+    <div class="modal fade" id="reserveModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-info text-white">
+                    <h3 class="modal-title">Reserve a Campsite</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form id="reserveForm" action="https://us-central1-nucamp-production.cloudfunctions.net/post/formdata" method="post">
+                            <div class="row mb-3">
+                                <label for="numCampers" class="col-form-label col-sm-6 col-md-6">Number of Campers</label>
+                                <div class="col-sm-6 col-md-6">
+                                    <select class="form-control" name="numCampers" id="numCampers">
+                                        <option>Select...</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="date" class="col-form-label col-sm-6 col-md-6">Date</label>
+                                <div class="col-sm-6 col-md-6">
+                                    <input type="date" class="form-control" id="date" name="date" placeholder="Select a date">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-6">
+                                    <button data-bs-dismiss="modal" class="btn btn-dark">Cancel</button>
+                                    <button type="submit" class="btn btn-primary text-white">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- main section -->
     <main class="container">
     
@@ -143,42 +188,6 @@
                     <div class="align-self-center">
                         <h3>Bootstrap Outfitters</h3>
                         <p class="d-none d-sm-block">Boostrap Outfitters supplies you with gear you need at prices you can't beat.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="row row-content">
-            <div class="col-9 mx-auto">
-                <div class="card">
-                    <h3 class="card-header bg-info text-white">Reserve a Campsite</h3>
-                    <div class="card-body">
-                        <form id="reserveForm">
-                            <div class="row mb-3">
-                                <label for="numCampers" class="col-form-label col-sm-6 col-md-6">Number of Campers</label>
-                                <div class="col-sm-6 col-md-6">
-                                    <select class="form-control" name="numCampers" id="numCampers">
-                                        <option>Select...</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="date" class="col-form-label col-sm-6 col-md-6">Date</label>
-                                <div class="col-sm-6 col-md-6">
-                                    <input type="date" class="form-control" id="date" name="date" placeholder="Select a date">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-sm-6">
-                                    <button type="submit" class="btn btn-primary text-white">Search</button>
-                                </div>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>
